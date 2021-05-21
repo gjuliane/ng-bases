@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 
@@ -30,6 +31,10 @@ export class MainPageComponent {
     console.log('Main page Component');
     console.log(event);
     this.personajes.push(event);
+  }
+
+  constructor(private DbzService: DbzService) {
+    
   }
 
 }
