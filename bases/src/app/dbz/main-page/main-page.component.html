@@ -1,38 +1,18 @@
-<h1>testing</h1>
+<h1>Dragon Ball</h1>
 <hr>
 
 <div class="row">
     <div class="col">
-        <h3>Personales</h3>
-        <ul>
-            <li>Krillin -700</li>
-            <li>Goku - 15,000</li>
-            <li>Vegeta -8500</li>
-        </ul>
+        <app-personajes [data]="personajes">
+        </app-personajes>
     </div>
     <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-        <form (ngSubmit)="agregar();">
-            
-            <!-- () emitir evento -->
-            <!-- [value]="nuevo.nombre"
-            (input)="cambiarNombre($event);" -->
-
-            <!-- Escuchar y que caiga en la misma caja de texto -->
-            <!-- [(ngModel)]="nuevo.nombre" -->
-            <input
-                type="text"
-                placeholder= "Nombre"
-                name="nombre"
-                [(ngModel)]="nuevo.nombre"
-            />
-            <input 
-                type="number" 
-                placeholder="Poder"
-                [value]="nuevo.poder"
-            />
-            <button>Agregar</button>
-        </form>
+        <!-- Así para el objeto por referencia -->
+        <!-- [data]="personajes"  -->
+        <!-- (onNuevoPersonaje) emite evento -->
+        <app-agregar 
+            [nuevo]="nuevo"
+            (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
+        ></app-agregar>
     </div>
 </div>
