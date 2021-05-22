@@ -3,16 +3,17 @@
 
 <div class="row">
     <div class="col">
-        <app-personajes [data]="personajes">
+        <!-- [data]="personajes" -->
+        <app-personajes >
         </app-personajes>
     </div>
     <div class="col">
         <!-- Así para el objeto por referencia -->
         <!-- [data]="personajes"  -->
         <!-- (onNuevoPersonaje) emite evento -->
+        <!-- (onNuevoPersonaje)="agregarNuevoPersonaje($event)" -->
         <app-agregar 
             [nuevo]="nuevo"
-            (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
         ></app-agregar>
     </div>
 </div>
