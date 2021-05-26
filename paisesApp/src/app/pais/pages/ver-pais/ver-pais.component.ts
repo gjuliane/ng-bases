@@ -15,7 +15,7 @@ export class VerPaisComponent implements OnInit {
   pais!: Country;
   // Suscribirnos a cualquier cambio de URL
   constructor(
-    private activateRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private paisService: PaisService
   ) { }
 
@@ -31,7 +31,7 @@ export class VerPaisComponent implements OnInit {
     //   })
 
     // Segunda Forma
-    this.activateRoute.params
+    this.activatedRoute.params
       .pipe(
         switchMap((params) => {
           return this.paisService.buscarPaisPorAlpha(params.id);
