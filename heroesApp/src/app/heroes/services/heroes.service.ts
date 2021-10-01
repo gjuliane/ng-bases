@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
+import { environment } from '../../../environments/environment';
 import { Heroe } from '../interfaces/heroes.interface';
 export { Heroe } from '../interfaces/heroes.interface';
 
@@ -11,13 +12,19 @@ export { Heroe } from '../interfaces/heroes.interface';
 })
 export class HeroesService {
 
+  private apiUrl:string = environment.apiUrl;
+
   constructor(private http:HttpClient) { }
 
   getHeroes(): Observable<Heroe[]> {
-    return this.http.get<Heroe[]>(`http://localhost:3000/heroes`);
+    return this.http.get<Heroe[]>(`${this.apiUrl}/heroes`);
   }
 
   getHeroePorId(id:string):Observable<Heroe>{
-    return this.http.get<Heroe>(`http://localhost:3000/heroes/${id}`);
+    return this.http.get<Heroe>(`${this.apiUrl}/heroes/${id}`);
+  }
+
+  getSugerencias(termino: string): Observable<Heroe[]>{
+    return this.http.get<Heroe[]>(`${this.apiUrl}/heroes?q=${termino}&_limit=6`);
   }
 }
