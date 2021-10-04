@@ -1,0 +1,44 @@
+{
+  "machines": [
+    {
+      "id": 1,
+      "serial": "MAQ00001",
+      "description": "John Doe 1 ",
+      "status": "alta",
+      "maintenance": 5,
+      "client": 2
+    },
+    {
+      "id": 2,
+      "serial": "MAQ00002",
+      "description": "John Doe 2",
+      "status": "alta",
+      "maintenance": 15,
+      "client": 2
+    },
+    {
+      "id": 3,
+      "serial": "MAQ00003",
+      "description": "John Doe 3",
+      "status": "alta",
+      "maintenance": 25,
+      "client": 3
+    },
+    {
+      "id": 4,
+      "serial": "MAQ00004",
+      "description": "John Doe 4",
+      "status": "baja",
+      "maintenance": 60,
+      "client": 3
+    },
+    {
+      "id": 5,
+      "serial": "MAQ00005",
+      "description": "John Doe 5",
+      "status": "alta",
+      "maintenance": 60,
+      "client": 1
+    }
+  ]
+}
